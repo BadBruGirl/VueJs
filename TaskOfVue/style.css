@@ -1,0 +1,13 @@
+.list>li {
+    cursor: pointer;
+}
+
+.list>li:hover {
+    color: red;
+}
+
+.list>li:hover::after {
+    content: '\2716';
+    margin-left: 20px;
+    color: red;
+}

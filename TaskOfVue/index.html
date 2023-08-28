@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>VueJS</title>
+</head>
+
+<body>
+    <!-- 1. Создать кнопку "Перевернуть". При клике на кнопку текст кнопки, должен перевернуться и отобразиться в обратном порядке.
+    2. Есть список элементов. Пользователь может добавлять новые элементы списка с текстом “Новый элемент списка” нажав на кнопку "Добавить".
+    3. * При клике на элемент списка он должен быть удален. (по желанию) -->
+    <div id="task2">
+        <button @click="getRevers()">{{message}}</button>
+        <hr>
+
+        <label for="input">Добавьте элемент списка</label>
+        <input type="text" id="input">
+        <button @click="setElement()">Добавить</button>
+
+        <ul class="list">
+            <li v-for="item in items" @click="remove(item)">{{item.text}}</li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#task2',
+            data: {
+                message: 'Перевернуть',
+                items: [
+                    { text: 'Элемент 1' },
+                    { text: 'Элемент 2' },
+                ]
+            },
+            methods: {
+                getRevers() {
+                    this.message = this.message.split('').reverse().join('');
+                },
+
+                setElement() {
+                    this.text = document.getElementById('input').value;
+                    const temp = {};
+                    temp.text = this.text;
+                    this.items.push(temp);
+                    console.log(this.items)
+                },
+
+                remove(item) {
+                    // event.target.remove();
+                    const index = this.items.findIndex(el => el.text === item.text);
+                    if (index !== -1) {
+                        this.items.splice(index, 1);
+                    }
+                    console.log(this.items)
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
