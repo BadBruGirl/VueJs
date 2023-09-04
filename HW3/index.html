@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Blog Detailse</title>
+</head>
+
+<body>
+    <!-- Реализовать страницу Blog details
+
+На странице отображается подробное описание статьи, а под ней размещаются остальные статьи
+
+Необходимо на выборе Tags чтобы происходила сортировка статей по выбранному тегу. Тег можно выбрать только один
+
+https://www.figma.com/file/okdYD45Tj2JpKsNASccUmf/Interior-Design-Webflow-Website-Template-(Community)-(Copy)-(Copy)?type=design&node-id=541-13&t=mhOD6yhLJuH2Biy0-0
+
+PS: С макетом можете плотно не работать, а реализовать только саму логику без макета. Дизайн внедрить можете позже.
+
+По итогу должно быть три компонента:
+1. blog-details (компонент отображения подробной информации о статье)
+2. blog (компонент отображения краткой информации о статье в компоненте blogs-list)
+3. blogs-list (компонент который выводит список из компонент blog и фильтрует его на основе выбранного тега) -->
+    <div id="app">
+        <Index></Index>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>
